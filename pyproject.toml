@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "csb-project-1"
+version = "0.1.0"
+description = ""
+authors = ["Tony Lam <tony.lam@iki.fi>"]
+readme = "README.md"
+package-mode = false
+[tool.poetry.dependencies]
+python = "^3.9"
+flask = "^3.0.0"
+# A9:2017-Using Components with Known Vulnerabilities
+werkzeug = "3.0.0"
+# to fix
+# uncomment this and comment above
+# werkzeug = "^3.1.0"
+djhtml = "^3.0.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

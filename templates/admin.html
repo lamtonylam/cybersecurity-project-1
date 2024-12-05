@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block title %}Admin{% endblock %}
+
+
+{% block content %}
+
+    {% if is_admin %}
+
+        {% for note in notes %}
+            <h1> You are admin. Showing all notes from all users </h1>
+            <div class="note">
+                <p>{{ note['content'] }}</p>
+            </div>
+        {% endfor %}
+
+    {% else %}
+        <p>You are not an admin</p>
+    {% endif %}
+
+    <p><a href="/notes">Back to frontpage</a></p>
+
+
+
+{% endblock %}
