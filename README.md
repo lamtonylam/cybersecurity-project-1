@@ -2,8 +2,8 @@
 
 # Startup Instructions
 
-[!NOTE]
-The project uses SQLite, so no need for setting up your own postgres and what not. The database is initialized automatically.
+> [!NOTE]
+> The project uses SQLite, so no need for setting up your own postgres and what not. The database is initialized automatically.
 
 1. **Install Poetry**: If you haven't already, install Poetry for your operating system by following the instructions at [Poetry Installation](https://python-poetry.org/docs/#installation).
 
