@@ -35,6 +35,18 @@ By using an outdated version of Werkzeug python library, it is vulnerable to a v
 https://github.com/pallets/werkzeug/security/advisories/GHSA-2g68-c3qc-8985  
 Appropriate fix would be to update this dependency in `pyproject.toml` file, which instructs Poetry to get an appropriate version of the dependency.
 
+To update this: change the Werkzeug version in `pyproject.toml` to
+
+```
+werkzeug = "^3.1.0"
+```
+
+Then run
+
+```bash
+poetry update
+```
+
 ## Vulnerability 2.
 
 ### A2:2017-Broken Authentication
