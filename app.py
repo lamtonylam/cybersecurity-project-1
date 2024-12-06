@@ -2,6 +2,7 @@ from flask import Flask, request, render_template, redirect, url_for, session, f
 from flask import request
 
 from db import Database
+from modules.unsecure_passwords import check_if_password_is_unsecure
 
 app = Flask(__name__)
 app.secret_key = "your_secret_key_here"
@@ -18,6 +19,14 @@ def register():
     if request.method == "POST":
         username = request.form["username"]
         password = request.form["password"]
+
+        # A2:2017-Broken Authentication
+        # to fix uncomment below
+        # if check_if_password_is_unsecure(password):
+        #     flash(
+        #         "Password is not safe, please choose another one that is not in the list of unsecure passwords."
+        #     )
+        #     return redirect(url_for("register"))
 
         if db.register_user(username, password):
             flash("Registration successful. Please log in.")

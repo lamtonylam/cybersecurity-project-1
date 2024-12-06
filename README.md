@@ -64,3 +64,11 @@ If an malicious party gains access to the database, they can immediately see all
 This also creates a threat for inside organizations, as database admins can see all user passwords in their plain format.
 
 Appropriate fix would be to hash user passwords with Werkzeug library.
+
+## Vulnerability 4.
+
+### A2:2017-Broken Authentication
+
+Not checking registering users passwords against a list of most commonly used ie. unsafe passwords, it is vulnerable for malicious actors to brute force user's accounts by guessing passwords that are commonly used, like 12345678 or qwerty.
+
+Appropriate fix would be to check registering password against most commonly used passwords.
