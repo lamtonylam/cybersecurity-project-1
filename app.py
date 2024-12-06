@@ -70,7 +70,7 @@ def notes():
 
 @app.route("/admin", methods=["get"])
 def admin():
-    # A2:2017-Broken Authentication
+    # A5:2017-Broken Access Control
     is_admin = request.args.get("is_admin")
 
     # to fix

@@ -49,8 +49,8 @@ poetry update
 
 ## Vulnerability 2.
 
-### A2:2017-Broken Authentication
+### A5:2017-Broken Access Control
 
-By checking admin priveledges from url parameter if link is `/admin?is_admin=true`, this creates a vulnerability for broken authentication. As some malicous party could compromise and see all the notes of all users.
+By checking admin priveledges from url parameter if link is `/admin?is_admin=true`, this creates a vulnerability for Broken Access Control. As some malicous party could compromise and see all the notes of all users.
 
 Appropriate fix would be to check if user has priveledges based on data from the database.
