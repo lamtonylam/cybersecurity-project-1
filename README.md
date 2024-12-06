@@ -54,3 +54,13 @@ poetry update
 By checking admin priveledges from url parameter if link is `/admin?is_admin=true`, this creates a vulnerability for Broken Access Control. As some malicous party could compromise and see all the notes of all users.
 
 Appropriate fix would be to check if user has priveledges based on data from the database.
+
+## Vulnerability 3.
+
+### A3:2017-Sensitive Data Exposure
+
+Not hashing passwords when registering users creates a vulnerability for sensitive data exposure.  
+If an malicious party gains access to the database, they can immediately see all user passwords in plaintext mode.
+This also creates a threat for inside organizations, as database admins can see all user passwords in their plain format.
+
+Appropriate fix would be to hash user passwords with Werkzeug library.

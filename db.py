@@ -34,8 +34,15 @@ class Database:
         c.execute(
             """INSERT OR IGNORE INTO users (username, password, admin)
                     VALUES (?, ?, 1)""",
-            ("admin", generate_password_hash("iamadmin")),
+            ("admin", "iamadmin"),
         )
+        # A3:2017-Sensitive Data Exposure
+        # to fix comment above and uncomment below sql command
+        #         c.execute(
+        #     """INSERT OR IGNORE INTO users (username, password, admin)
+        #             VALUES (?, ?, 1)""",
+        #     ("admin", generate_password_hash("iamadmin")),
+        # )
         conn.commit()
         conn.close()
 
@@ -49,8 +56,14 @@ class Database:
 
         c.execute(
             "INSERT INTO users (username, password) VALUES (?, ?)",
-            (username, generate_password_hash(password)),
+            (username, password),
         )
+        # A3:2017-Sensitive Data Exposure
+        # to fix comment above and uncomment below sql command
+        # c.execute(
+        #     "INSERT INTO users (username, password) VALUES (?, ?)",
+        #     (username, generate_password_hash(password)),
+        # )
         conn.commit()
         conn.close()
         return True
@@ -63,7 +76,10 @@ class Database:
         ).fetchone()
         conn.close()
 
-        if user and check_password_hash(user["password"], password):
+        if user and user["password"] == password:
+            # A3:2017-Sensitive Data Exposure
+            # to fix comment above and uncomment below
+            # if user and check_password_hash(user["password"], password):
             return dict(user)
         return None
 
