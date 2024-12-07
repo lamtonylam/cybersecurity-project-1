@@ -50,20 +50,27 @@ poetry update
 ## Vulnerability 2.
 
 ### A5:2017-Broken Access Control
-
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/app.py#L110
 By checking admin priveledges from url parameter if link is `/admin?is_admin=true`, this creates a vulnerability for Broken Access Control. As some malicous party could compromise and see all the notes of all users.
 
-Appropriate fix would be to check if user has priveledges based on data from the database.
+Appropriate fix would be to check if user has priveledges based on data from the database.  
+Uncomment the fix:
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/app.py#L113
 
 ## Vulnerability 3.
 
 ### A3:2017-Sensitive Data Exposure
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/db.py#L57
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/db.py#L58
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/db.py#L59
 
 Not hashing passwords when registering users creates a vulnerability for sensitive data exposure.  
 If an malicious party gains access to the database, they can immediately see all user passwords in plaintext mode.
 This also creates a threat for inside organizations, as database admins can see all user passwords in their plain format.
 
-Appropriate fix would be to hash user passwords with Werkzeug library.
+Appropriate fix would be to hash user passwords with Werkzeug library.  
+Uncomment the fix:
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/db.py#L65
 
 ## Vulnerability 4.
 
