@@ -79,7 +79,8 @@ https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c6
 Not checking registering users passwords against a list of most commonly used ie. unsafe passwords, it is vulnerable for malicious actors to brute force user's accounts by guessing passwords that are commonly used, like 12345678 or qwerty.
 
 Appropriate fix would be to check registering password against most commonly used passwords.
-
+Uncomment to fix:
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/app.py#L33
 ## Vulnerability 5.
 
 ### A10:2017-Insufficient Logging & Monitoring
@@ -88,4 +89,7 @@ By not logging critical security events that happen on the website, such as fail
 
 Performing proper security incident investigations becomes nearly impossible without adequate logging records of user activities and system events. The lack of monitoring capabilities significantly impacts the ability to respond to and investigate security incidents in a timely manner.
 
-The fix would be to implement logging using Python's logging framework.
+The fix would be to implement logging using Python's logging framework.  
+Uncomment to fix:
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/app.py#L17
+https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/app.py#L120
