@@ -33,7 +33,10 @@
 
 By using an outdated version of Werkzeug python library, it is vulnerable to a vulnerability "Werkzeug debugger vulnerable to remote execution when interacting with attacker controlled domain"
 https://github.com/pallets/werkzeug/security/advisories/GHSA-2g68-c3qc-8985  
-Appropriate fix would be to update this dependency in `pyproject.toml` file, which instructs Poetry to get an appropriate version of the dependency.
+
+Exploiting this vulnerability could enable attackers to execute arbitrary code on the server, potentially gaining unauthorized access to sensitive data or further compromising the application.
+
+Appropriate fix would be to update this dependency in `pyproject.toml` file, which instructs Poetry to get an appropriate version of the dependency. Keeping dependencies up-to-date should be a routine part of the development cycle to mitigate risks stemming from vulnerable components.
 
 To update this: change the Werkzeug version in `pyproject.toml` https://github.com/lamtonylam/cybersecurity-project-1/blob/e7527bf8c394a3f93973442e84bc2960f7422c9c/pyproject.toml#L12 to
 
@@ -51,7 +54,7 @@ poetry update
 
 ### A5:2017-Broken Access Control
 https://github.com/lamtonylam/cybersecurity-project-1/blob/0692eb82a3ab90095f6c653a7d07812f38fc0096/app.py#L110
-By checking admin priveledges from url parameter if link is `/admin?is_admin=true`, this creates a vulnerability for Broken Access Control. As some malicous party could compromise and see all the notes of all users.
+By checking admin priveledges from url parameter if link is `/admin?is_admin=true`, this creates a vulnerability for Broken Access Control. As some malicous party could compromise and see all the notes of all users. This is a significant flaw, as it relies on client-controlled input, which can be manipulated by an attacker to bypass access restrictions.
 
 Appropriate fix would be to check if user has priveledges based on data from the database.  
 Uncomment the fix:
